@@ -1,7 +1,17 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
+import classes from "./UsersList.module.css";
 
-export default function UsersList() {
+export default function UsersList(props) {
   return (
-    <div>UsersList</div>
-  )
+    <Card extraClasses={classes.users}>
+      <ul>
+        {props.users.map((user) => (
+          <li key={user.id}>
+            {user.name} ({user.age} years of age)
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
 }

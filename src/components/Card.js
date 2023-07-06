@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import classes from "./Card.module.css";
 
-export default function Card() {
+export default function Card(props) {
   return (
-    <div>Card</div>
-  )
+    <div className={`${classes.card} ${props.extraClasses}`}>
+      {props.children}
+    </div>
+  );
 }
